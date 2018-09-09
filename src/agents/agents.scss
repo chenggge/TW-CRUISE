@@ -1,0 +1,405 @@
+/* color */
+$defaultTextColor: #2D4054;
+$defaultTextHover: #435466;
+$orange: #FF9A2A;
+$green: #7FBA39;
+$lightBlue: #00B4CF;
+$darkBlue: #01869A;
+$lightGray: #F3F3F3;
+$drakGray: #E1E4E6;
+$hoverGray: #EFEFEF;
+$textHover: #00B4CF;
+$grayccc: #ccc;
+$gray999: #999;
+$black: #000;
+$white: #fff;
+
+/* font */
+$font12: 12px;
+$font14: 14px;
+$font16: 16px;
+$font18: 18px;
+$font20: 20px;
+$defaultFamily: Avenir,Helvetica,Arial,sans-serif;
+
+/* width and height */
+$alertWidth: 570px;
+$buttonHeight: 30px;
+$imgHeight: 40px;
+$navHeight: 50px;
+
+/* border */
+$navBorder: 3px;
+
+/* shadow */
+$alertShadow: 0 3 5px($black, 30%);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-align:center;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+html body {
+    color: $defaultTextColor;
+    background-color: $lightGray;
+    font-size: $font14;
+    font-family: $defaultFamily;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+/* Desktop HD*/
+@media screen and (min-width:1200px) {
+    .header{
+        width: 100%;
+        height: 60px;
+        background: $white;
+        line-height: 60px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        .left {
+            i {
+                display: none;
+            }
+        }
+        .center{
+            display: flex;
+            flex-direction: column;
+            .logo{
+                width: 5rem;
+                height: 40px;
+            }
+        }
+        .right{
+            font-size: 24px;
+            display: flex;
+            flex-direction: row;
+            line-height: 60px;
+            align-items: center;
+            height: 60px;
+            .user{
+                display: flex;
+                flex-direction: column;
+                margin-right: 10px;
+                .userImg{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+    .footer{
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        background: $white;
+    }
+    .content{
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        flex: 1;
+        .leftMenu{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1;
+            background: $defaultTextColor;
+            color: $grayccc;
+            font-size: $font14;
+            .top{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-top: 15px;
+                height: 200px;
+                ul {
+                    width: 100%;
+                    li{
+                        height: 45px;
+                        line-height: 45px;
+                        width: 100%;
+                        overflow: hidden;
+                        text-align: left;
+                        i{
+                            color: $white;
+                            margin-right: 5px;
+                        }
+                        &:hover{
+                            color: $lightBlue;
+                            background: $defaultTextHover;
+                            max-width: 100%;
+                            cursor: pointer;
+                            i{
+                                color: $lightBlue;
+                                margin-right: 5px;
+                            }
+                        }
+                        .use30{
+                            margin-left: 25px;
+                        }
+                    }
+                    .active{
+                        color: $lightBlue;
+                        background: $defaultTextHover;
+                        max-width: 100%;
+                        cursor: pointer;
+                        i{
+                            color: $lightBlue;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+            .bottom{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                margin-bottom: 15px;
+                flex: 1;
+                width: 100%;
+                .title{
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                    margin-left: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+                }
+                ul{
+                    max-width: 100%;
+                    margin-left: 30px;
+                    li{
+                        height: 24px;
+                        line-height: 24px;
+                        width: 100%;
+                        text-align: left;
+                        text-overflow: ellipsis;
+                        font-size: $font12;
+                        color: $gray999;
+                        &:hover{
+                            color: $lightBlue;
+                        }
+                    }
+                }
+            }
+        }
+        .view{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            flex: 3;
+            .topBox{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                margin-top: 15px;
+                .first{
+                    flex: 1;
+                    height: 100px;
+                    background: $orange;
+                    margin: 0 20px;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    .boxTitle{
+                        flex: 1;
+                        color: $white;
+                        text-align: left;
+                        font-weight: bold;
+                        font-size: $font18;
+                    }
+                    .boxContent{
+                        flex: 2;
+                        color: #fff;
+                        text-align: right;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-end;
+                        font-size: 48px;
+                        justify-content: flex-end;
+                        width: 100%;
+                    }
+                }
+                .second{
+                    flex: 1;
+                    height: 100px;
+                    background: $green;
+                    margin: 0 20px;
+                }
+                .third{
+                    flex: 1;
+                    height: 100px;
+                    background: $white;
+                    margin: 0 20px;
+                }
+            }
+        }
+    }
+
+}
+/* Desktop*/
+@media screen and (max-width:1200px) and  (min-width:1024px) {
+    .header{
+        width: 100%;
+        height: 60px;
+        background: $white;
+        line-height: 60px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        .left {
+            i {
+                display: none;
+            }
+        }
+        .center{
+            display: flex;
+            flex-direction: column;
+            .logo{
+                width: 5rem;
+                height: 40px;
+            }
+        }
+        .right{
+            font-size: 24px;
+            display: flex;
+            flex-direction: row;
+            line-height: 60px;
+            align-items: center;
+            height: 60px;
+            .user{
+                display: flex;
+                flex-direction: column;
+                margin-right: 10px;
+                .userImg{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+    .footer{
+        width: 100%;
+        height: 30px;
+        background: $white;
+        line-height: 30px;
+    }
+}
+/* Tablet*/
+@media screen and (max-width:1024px) and  (min-width:768px) {
+    .header{
+        width: 100%;
+        height: 60px;
+        background: $white;
+        line-height: 60px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        .left {
+            //display: none;
+            font-size: 24px;
+        }
+        .center{
+            display: flex;
+            flex-direction: column;
+            .logo{
+                width: 5rem;
+                height: 40px;
+            }
+        }
+        .right{
+            font-size: 24px;
+            display: flex;
+            flex-direction: row;
+            line-height: 60px;
+            align-items: center;
+            height: 60px;
+            .user{
+                display: flex;
+                flex-direction: column;
+                margin-right: 10px;
+                .userImg{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+    .footer{
+        display: none;
+    }
+}
+/* Phone*/
+@media screen and (max-width:768px) {
+    .header{
+        width: 100%;
+        height: 60px;
+        background: $white;
+        line-height: 60px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        .left {
+            //display: none;
+            font-size: 24px;
+        }
+        .center{
+            display: flex;
+            flex-direction: column;
+            .logo{
+                width: 5rem;
+                height: 40px;
+            }
+        }
+        .right{
+            font-size: 24px;
+            display: flex;
+            flex-direction: row;
+            line-height: 60px;
+            align-items: center;
+            height: 60px;
+            .user{
+                display: flex;
+                flex-direction: column;
+                margin-right: 10px;
+                .userImg{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+    .footer{
+        display: none;
+    }
+}
