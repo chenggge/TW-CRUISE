@@ -1,3 +1,6 @@
 node_modules/
-ASSETS/mockups/
+ASSETS/
 src/dist/
+
+problems.md
+package-lock.json

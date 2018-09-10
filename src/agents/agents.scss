@@ -34,6 +34,30 @@ $navBorder: 3px;
 /* shadow */
 $alertShadow: 0 3 5px($black, 30%);
 
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 
 * {
     margin: 0;
@@ -57,6 +81,9 @@ html body {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+}
+.display{
+    display: none;
 }
 /* Desktop HD*/
 @media screen and (min-width:1200px) {
@@ -211,6 +238,7 @@ html body {
             justify-content: flex-start;
             align-items: center;
             flex: 3;
+            margin: 0 20px;
             .topBox{
                 width: 100%;
                 display: flex;
@@ -220,11 +248,11 @@ html body {
                     flex: 1;
                     height: 100px;
                     background: $orange;
-                    margin: 0 20px;
                     padding: 10px;
                     display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
+                    flex-direction: row;
+                    align-items: stretch;
+                    overflow: hidden;
                     .boxTitle{
                         flex: 1;
                         color: $white;
@@ -232,8 +260,17 @@ html body {
                         font-weight: bold;
                         font-size: $font18;
                     }
-                    .boxContent{
+                    .boxIcon{
                         flex: 2;
+                        margin-top: -20px;
+                        opacity: 0.2;
+                        color: #fff;
+                        font-size: 144px;
+                        -webkit-animation: spin 2s linear infinite;
+                        animation: spin 2s linear infinite;
+                    }
+                    .boxContent{
+                        flex: 1;
                         color: #fff;
                         text-align: right;
                         display: flex;
@@ -249,12 +286,227 @@ html body {
                     height: 100px;
                     background: $green;
                     margin: 0 20px;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: stretch;
+                    overflow: hidden;
+                    .boxTitle{
+                        flex: 1;
+                        color: $white;
+                        text-align: left;
+                        font-weight: bold;
+                        font-size: $font18;
+                    }
+                    .boxIcon{
+                        flex: 2;
+                        margin-top: -28px;
+                        opacity: 0.2;
+                        color: #fff;
+                        font-size: 144px;
+                    }
+                    .boxContent{
+                        flex: 1;
+                        color: #fff;
+                        text-align: right;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-end;
+                        font-size: 48px;
+                        justify-content: flex-end;
+                        width: 100%;
+                    }
                 }
                 .third{
                     flex: 1;
                     height: 100px;
                     background: $white;
-                    margin: 0 20px;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: stretch;
+                    overflow: hidden;
+                    .box{
+                        flex: 1;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        .left{
+                            font-size: 12px;
+                        }
+                        .right{
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+            .centerrBox{
+                height: 50px;
+                width: 100%;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                .leftNav{
+                    flex: 3;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .navItem{
+                        flex: 1;
+                        border-right: 1px solid $lightGray;
+                        height: 50px;
+                        line-height: 50px;
+                        background: $white;
+                    }
+                    .active{
+                        color: $lightBlue;
+                        border-bottom: 3px solid $lightBlue;
+                    }
+                }
+                .center{
+                    flex: 4;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    height: 50px;
+                    background: $white;
+                    font-size: 20px;
+                    display: flex;
+                    .leftSearch{
+                        padding: 0 10px;
+                        background: #f3f3f3;
+                        .search{
+                            height: 30px;
+                            background: $lightGray;
+                            border: none;
+                            text-align: left;
+                        }
+                    }
+                }
+                .rightIcon{
+                    flex: 0.8;
+                    font-size: 20px;
+                    background: $white;
+                    height: 50px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    .ative{
+                        color: $lightBlue;
+                    }
+                }
+            }
+            .bottomBox{
+                flex: 1;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                overflow-y: scroll;
+                .item{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    background: #fff;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-bottom: 15px;
+                    min-height: 100px;
+                    .icon{
+                        margin: 15px;
+                    }
+                    .des{
+                        flex: 1;
+                        margin: 15px;
+                        display: flex;
+                        flex-direction: column;
+                        .fLine{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                            flex: 1;
+                            flex-wrap: wrap;
+                            line-height: 40px;
+                            div i{
+                                margin-right: 5px;
+                            }
+                            .fontBlue{
+                                color: $lightBlue;
+                            }
+                            .state{
+                                background: $orange;
+                                color: $white;
+                                margin-left: 10px;
+                                padding: 5px;
+                            }
+                            .Idle{
+                                background: $green;
+                            }
+                        }
+                        .sLine{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                            flex: 1;
+                            flex-wrap: wrap;
+                            line-height: 40px;
+                            .left{
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-start;
+                                align-items: center;
+                                div{
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    &:not(:first-child){
+                                        margin-left: 10px;
+                                        height: 18px;
+                                        padding: 3px 5px;
+                                        font-size: $font16;
+                                        font-weight: bold;
+                                    }
+                                    span{
+                                        margin-right: 10px;
+                                    }
+                                }
+                                .plus{
+                                    color: $white;
+                                    background: $lightBlue;
+                                    font-size: $font18;
+                                    padding: 3px 6px;
+                                }
+                                .delete{
+                                    background: $lightGray;
+                                    padding: 3px;
+                                }
+                            }
+                            .right{
+                                button{
+                                    border: none;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    padding: 0 15px;
+                                    background: $lightBlue;
+                                    color: $white;
+                                    i{
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
